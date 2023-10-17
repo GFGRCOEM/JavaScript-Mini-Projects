@@ -1,0 +1,103 @@
+*
+{
+
+    /* outline: auto; */
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: bisque;
+}
+
+/* .body
+{
+} */
+
+.hero
+{
+    background-color: #1d2733;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:55px;
+    
+}
+.hero .title
+{
+    font-size:3.2rem;
+    letter-spacing: 2px;
+}
+.hero .title span
+{
+    color: #17a160;
+    padding: 6px;
+}
+
+.hero .results
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:25px;
+    font-size: 1.4rem;
+    border: 2px solid bisque;
+    height: 80px;
+    width: 570px;
+}
+.hero .scores
+{
+    font-size: 4rem;
+}
+/* #declare
+{
+    transition: all step-end ;
+} */
+
+.hero .playarea
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+    
+}
+.hero .playarea .actions
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+/* .hero .playarea .actions #img1
+{
+    transform: rotateY(180deg);
+} */
+.hero .playarea img
+{
+    height: 165px;
+    width:200px;
+}
+.selectactions
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:50px;
+         
+}
+.selectactions button
+{
+    font-size: 1.3rem;
+    padding: 4px;
+    height: 35px;
+    width: 80px;
+    background-color: #17a160;
+    box-shadow: 3px 3px 2px bisque;
+}
+.selectactions button:hover
+{
+    transform: scale(1.1);
+}
+ 
