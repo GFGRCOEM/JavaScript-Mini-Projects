@@ -1,0 +1,349 @@
+@font-face {
+	font-family: pokemon-solid;
+	src: url('../public/assets/fonts/Solid.ttf');
+}
+
+@font-face {
+	font-family: pokemon-hollow;
+	src: url('../public/assets/fonts/Hollow.ttf');
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	background: white;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
+	-webkit-user-drag: none;
+	/* outline: 1px solid blue; */
+}
+
+:focus {
+	outline: none !important;
+}
+
+.joy {
+	margin: 20px;
+	max-height: max(45vw, 80vh);
+}
+
+@keyframes fillRight {
+	from {
+		max-width: 0px;
+	}
+
+	to {
+		max-width: 100%;
+	}
+}
+
+.bubble {
+	position: absolute;
+	top: 10vh;
+	left: 12vw;
+	font-size: max(1vw, 1.1rem);
+	background: #f4b3a8;
+	padding-inline: 2rem;
+	border-radius: 2rem;
+	height: 7rem;
+	width: max(19rem, 30vw);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	z-index: 5;
+}
+
+.bubble::after {
+	z-index: 1;
+	content: '';
+	position: absolute;
+	width: 60px;
+	height: 50px;
+	transform: translate(12vw, 80%) rotate(75deg);
+	background: inherit;
+	border-radius: 0 200% 0 200%;
+	z-index: -3;
+}
+
+.pane:hover .pkmn {
+	transition: all 0.2s ease-out;
+	transform: scale(1.05);
+}
+
+.icon {
+	border-radius: 100%;
+	width: 2.4rem;
+	aspect-ratio: 1;
+	margin: auto;
+	transition: 200ms all;
+	display: grid;
+	place-items: center;
+}
+
+.icon:hover {
+	filter: saturate(200%);
+}
+
+.icon:hover::before {
+	content: attr(data-type);
+	position: absolute;
+	width: fit-content;
+	background: inherit;
+	padding-inline: 1rem;
+	border-radius: 1rem;
+	text-align: center;
+	text-transform: capitalize;
+	color: white;
+	margin: 6px;
+	animation: pop 0.3s cubic-bezier(0.295, 1.93, 0.085, 0.92) forwards;
+}
+
+.icon img {
+	height: 60%;
+	width: 60%;
+	margin: auto;
+}
+
+.bug {
+	background: #92bc2c;
+	box-shadow: 0 0 20px #92bc2c;
+}
+
+.dark {
+	background: #595761;
+	box-shadow: 0 0 20px #595761;
+}
+
+.dragon {
+	background: #0c69c8;
+	box-shadow: 0 0 20px #0c69c8;
+}
+
+.electric {
+	background: #f2d94e;
+	box-shadow: 0 0 20px #f2d94e;
+}
+
+.fire {
+	background: #fba54c;
+	box-shadow: 0 0 20px #fba54c;
+}
+
+.fairy {
+	background: #ee90e6;
+	box-shadow: 0 0 20px #ee90e6;
+}
+
+.fighting {
+	background: #d3425f;
+	box-shadow: 0 0 20px #d3425f;
+}
+
+.flying {
+	background: #a1bbec;
+	box-shadow: 0 0 20px #a1bbec;
+}
+
+.ghost {
+	background: #5f6dbc;
+	box-shadow: 0 0 20px #5f6dbc;
+}
+
+.grass {
+	background: #5fbd58;
+	box-shadow: 0 0 20px #5fbd58;
+}
+
+.ground {
+	background: #da7c4d;
+	box-shadow: 0 0 20px #da7c4d;
+}
+
+.ice {
+	background: #75d0c1;
+	box-shadow: 0 0 20px #75d0c1;
+}
+
+.normal {
+	background: #a0a29f;
+	box-shadow: 0 0 20px #a0a29f;
+}
+
+.poison {
+	background: #b763cf;
+	box-shadow: 0 0 20px #b763cf;
+}
+
+.psychic {
+	background: #fa8581;
+	box-shadow: 0 0 20px #fa8581;
+}
+
+.rock {
+	background: #c9bb8a;
+	box-shadow: 0 0 20px #c9bb8a;
+}
+
+.steel {
+	background: #5695a3;
+	box-shadow: 0 0 20px #5695a3;
+}
+
+.water {
+	background: #539ddf;
+	box-shadow: 0 0 20px #539ddf;
+}
+
+.pokeball {
+	animation: spin 5s linear infinite;
+}
+
+svg.clicked {
+	animation: none;
+}
+
+@media (max-width: 40rem) {
+	.joy {
+		transform: translateY(0);
+	}
+
+	.bubble {
+		top: 50vh;
+		left: 8vw;
+	}
+
+	.bubble::after {
+		transform: translate(-225%, -80%) rotate(75deg);
+		border-radius: 0 100% 0 100%;
+		width: 50px;
+	}
+
+	.pokeball {
+		animation: jump 3s cubic-bezier(0.5, 0.35, 0.15, 0.86) infinite;
+	}
+
+	g.inner {
+		animation: pulse 0.5s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+
+	svg.clicked g.inner {
+		animation: none;
+	}
+
+	svg.clicked {
+		animation: none;
+	}
+}
+
+@keyframes pop {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(-150%);
+	}
+}
+
+@keyframes pop-back {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+}
+
+@keyframes pulse {
+	5% {
+		opacity: 1;
+	}
+
+	30% {
+		opacity: 0;
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes jump {
+	0% {
+		transform: translateY(0);
+	}
+
+	10% {
+		transform: translateY(-70%);
+	}
+
+	20% {
+		transform: translateY(0);
+	}
+
+	30% {
+		transform: translateY(-70%);
+	}
+
+	40% {
+		transform: translateY(0);
+	}
+}
+
+/* scaleUp for the arcs in between the ball's halves and for the failure animation */
+svg.clicked g.open {
+	animation: scaleUp 0.2s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@keyframes scaleUp {
+	to {
+		transform: scale(1);
+	}
+}
+
+/* translateUp for the top half and the failure animation */
+svg.clicked g.top {
+	animation: translateUp 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@keyframes translateUp {
+	to {
+		transform: translateY(-10px);
+	}
+}
+
+/* translateDown for the bottom half and the failure animation */
+svg.clicked g.bottom {
+	animation: translateDown 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@keyframes translateDown {
+	to {
+		transform: translateY(5px);
+	}
+}
+
+/* translateHigher for the center and the failure animation */
+svg.clicked g.center {
+	animation: translateHigher 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@keyframes translateHigher {
+	to {
+		transform: translateY(-18px);
+	}
+}
