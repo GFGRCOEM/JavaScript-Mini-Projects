@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Count Down</title>
+</head>
+
+<body>
+	<h1>Count Down</h1>
+	<div class="input-time">
+		<input min="0" max="99" type="number" id="days-input" placeholder="Days">
+		<input min="0" max="23" type="number" id="hours-input" placeholder="Hours">
+		<input min="0" max="59" type="number" id="mins-input" placeholder="Minutes">
+		<input min="0" max="59" type="number" id="seconds-input" placeholder="Seconds">
+		<button id="start" onclick="countdown()">Start</button>
+		<button id="pause" disabled onclick="pause()">Pause</button>
+		<button id="stop" onclick="reset()">Reset</button>
+	</div>
+	<div id="countdown">
+		<div class="countdown-item">
+			<span id="days" class="countdown-number">0</span>
+			<span class="countdown-label">days</span>
+		</div>
+		<div class="countdown-item">
+			<span id="hours" class="countdown-number">0</span>
+			<span class="countdown-label">hrs</span>
+		</div>
+		<div class="countdown-item">
+			<span id="minutes" class="countdown-number">0</span>
+			<span class="countdown-label">mins</span>
+		</div>
+		<div class="countdown-item">
+			<span id="seconds" class="countdown-number">0</span>
+			<span class="countdown-label">sec</span>
+		</div>
+	</div>
+	<script src="countdown.js"></script>
+</body>
+
+</html>
