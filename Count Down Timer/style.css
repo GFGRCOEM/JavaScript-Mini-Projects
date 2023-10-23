@@ -1,0 +1,73 @@
+body {
+	background-color: #f5f5f5;
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #333;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	font-size: 4.5rem;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 1rem 0;
+}
+
+.input-time {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+.input-time input {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.5rem;
+	font-size: 1rem;
+	width: 20rem;
+}
+
+.input-time button {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.5rem;
+	font-size: 1rem;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.input-time button:hover {
+	background-color: #eee;
+}
+
+.input-time button:active {
+	background-color: #ddd;
+}
+
+.input-time button:disabled {
+	background-color: #c2c2c261;
+	cursor: not-allowed;
+}
+
+#countdown {
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+	font-size: 4rem;
+}
+
+.countdown-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+	gap: 0.5rem;
+}
