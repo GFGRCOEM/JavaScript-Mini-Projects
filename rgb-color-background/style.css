@@ -1,0 +1,40 @@
+body {
+	background-color: #f3f3f3;
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all .7s ease-out;
+}
+
+div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5vw;
+}
+
+input {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+
+::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
