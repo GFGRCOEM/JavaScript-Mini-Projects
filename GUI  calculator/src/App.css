@@ -1,0 +1,17 @@
+#root {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: rgb(246, 220, 255);
+}
+
+* {
+	user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	#root {
+		background: #1f1821;
+	}
+}
